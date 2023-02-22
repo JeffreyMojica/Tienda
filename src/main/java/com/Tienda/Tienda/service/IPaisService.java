@@ -5,6 +5,7 @@
 package com.Tienda.Tienda.service;
 
 import com.Tienda.Tienda.entity.Pais;
+import com.Tienda.Tienda.entity.Persona;
 import java.util.List;
 
 /**
@@ -13,6 +14,8 @@ import java.util.List;
  */
 public interface IPaisService {
     public List<Pais> listCountry(); //Definimos el metodo
+
+   
     
     
 }
