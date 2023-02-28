@@ -11,6 +11,7 @@ import java.util.List;
  *
  * @author Jeffrey Mojica S
  */
+
 public interface IPersonaService {
     public List<Persona> getAllPersona();
     public Persona getPersonaById (long id);

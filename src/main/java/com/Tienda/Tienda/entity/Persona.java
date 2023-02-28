@@ -17,6 +17,8 @@ import java.io.Serializable;
  *
  * @author Jeffrey Mojica S
  */
+@Entity
+@Table(name = "personas")
 public class Persona implements Serializable {
 
     @Id
@@ -48,13 +50,15 @@ public class Persona implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getAoellido1() {
+    public String getApellido1() {
         return apellido1;
     }
 
-    public void setAoellido1(String aoellido1) {
-        this.apellido1 = aoellido1;
+    public void setApellido1(String apellido1) {
+        this.apellido1 = apellido1;
     }
+
+   
 
     public String getApellido2() {
         return apellido2;

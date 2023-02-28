@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  *
  * @author Jeffrey Mojica S
  */
- @Controller
+@Controller
 public class PersonaController {
    
 
@@ -32,7 +32,7 @@ public class PersonaController {
     public String index(Model model) {
         List<Persona> listaPersona = personaService.getAllPersona();
         model.addAttribute("Titulo", "Tabla Personas");
-        model.addAttribute("personas", listaPersona);
+        model.addAttribute("persona", listaPersona);
         return "personas";
     }
 
@@ -43,5 +43,7 @@ public class PersonaController {
         model.addAttribute("paises", listaPaises);
         return "crear";
     }
+    
+    
 
  }
