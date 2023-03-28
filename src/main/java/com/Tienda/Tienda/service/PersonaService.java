@@ -20,6 +20,7 @@ public class PersonaService implements IPersonaService{
     @Autowired
     private PersonaRepository personaRepository;
       
+    
     @Override
     public List<Persona> getAllPersona() {
      return(List<Persona>)personaRepository.findAll();   
@@ -39,5 +40,19 @@ public class PersonaService implements IPersonaService{
     public void delete(long id) {
         personaRepository.deleteById(id);
     }
+
+    
+    @Override
+    public List<Persona> listAll(String palabraClave) {
+       if(palabraClave != null){
+            return personaRepository.findAll(palabraClave);
+            
+        }
+     return(List<Persona>)personaRepository.findAll();   
+    }
+
+   
+
+   
     
 }

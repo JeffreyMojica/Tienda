@@ -10,12 +10,14 @@ import com.Tienda.Tienda.service.IPaisService;
 import com.Tienda.Tienda.service.IPersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  *
@@ -30,6 +32,15 @@ public class PersonaController {
 
     @Autowired
     private IPaisService paisService;
+    
+    
+    @RequestMapping("/personaApellido1")
+    public String buscar(Model model, @Param("palabraClave") String palabraClave){    
+         List<Persona> listaPersona = personaService.listAll(palabraClave);
+         model.addAttribute("Titulo", "Tabla Personas");
+         model.addAttribute("persona", listaPersona);      
+          return "personas";
+    }
 
     @GetMapping("/persona")
     public String index(Model model) {

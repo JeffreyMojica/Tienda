@@ -6,6 +6,8 @@ package com.Tienda.Tienda.repository;
 
 
 import com.Tienda.Tienda.entity.Persona;
+import java.util.List;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -16,5 +18,8 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface PersonaRepository extends CrudRepository<Persona,Long>{
+    
+    @Query(value="SELECT * FROM personas WHERE personas.apellido1 LIKE %?1%", nativeQuery=true)
+    public List<Persona> findAll(String palabraClave);
     
 }
