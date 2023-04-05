@@ -51,6 +51,11 @@ public class PersonaService implements IPersonaService{
      return(List<Persona>)personaRepository.findAll();   
     }
 
+    @Override
+    public Persona findByNombre(String username) {
+      return personaRepository.findByNombre(username); /*El findByNombre daba error entonces vamos al repository*/
+    }
+
    
 
    

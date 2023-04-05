@@ -22,4 +22,5 @@ public interface PersonaRepository extends CrudRepository<Persona,Long>{
     @Query(value="SELECT * FROM personas WHERE personas.apellido1 LIKE %?1%", nativeQuery=true)
     public List<Persona> findAll(String palabraClave);
     
+    Persona findByNombre(String username); /*Una vez agregado aqui ya s epuede usar en PersonaService*/
 }
