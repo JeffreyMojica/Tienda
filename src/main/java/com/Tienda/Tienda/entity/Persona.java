@@ -74,8 +74,7 @@ public class Persona implements Serializable {
         this.apellido1 = apellido1;
     }
 
-   
-
+  
     public String getApellido2() {
         return apellido2;
     }
